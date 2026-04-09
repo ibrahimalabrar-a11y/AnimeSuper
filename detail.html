@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeSuper</title>
+<style>
+/* RESET & BODY */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: #B0E0E6;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* VIDEO */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* JUDUL & DESKRIPSI */
+#judul {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+#deskripsi {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* EPISODE BUTTONS */
+.episode h3 {
+    margin-bottom: 10px;
+}
+
+.episode button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.episode button:hover {
+    background-color: darkorange;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    #judul {
+        font-size: 22px;
+    }
+    #deskripsi {
+        font-size: 14px;
+    }
+    .episode button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>ANIMESUPER</header>
+
+<main>
+    <div class="video-container">
+        <iframe id="video" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <h2 id="judul"></h2>
+    <p id="deskripsi"></p>
+
+    <div class="episode">
+        <h3>Episode</h3>
+    </div>
+</main>
+
+<script>
+// Ambil id dari URL
+const params = new URLSearchParams(window.location.search);
+const animeId = params.get('id');
+
+// Ambil data dari anime.json
+fetch('anime.json')
+.then(res => res.json())
+.then(data => {
+    const anime = data.find(a => a.id === animeId);
+    if (!anime) return alert("Anime tidak ditemukan");
+
+    // Update judul & deskripsi
+    document.getElementById('judul').textContent = anime.title;
+    document.getElementById('deskripsi').textContent = anime.description;
+
+    const videoEl = document.getElementById('video');
+
+    // Load episode pertama
+    videoEl.src = anime.episodes[0].video;
+
+    // Buat tombol episode
+    const episodeContainer = document.querySelector('.episode');
+    anime.episodes.forEach(ep => {
+        const btn = document.createElement('button');
+        btn.textContent = "Episode " + ep.num;
+        btn.onclick = () => {
+            videoEl.src = ep.video;
+        };
+        episodeContainer.appendChild(btn);
+    });
+})
+.catch(err => console.error("Error:", err));
+</script>
+
+</body>
+</html>

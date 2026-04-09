@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibranime</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: white;
+            color: black;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #B0E0E6;
+            padding: 10px 20px;
+        }
+
+        h3 {
+            margin-left: 20px;
+        }
+
+        #anime-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .card {
+            width: 150px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            height: 190px;
+        }
+
+        a {
+            text-decoration: none;
+            color:  black;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>ANIMESUPER</h2>
+    <p>Semuanya gratis kok.</p>
+</header>
+
+<h3>Daftar Populer</h3>
+
+<div id="anime-list"></div>
+
+<script>
+const container = document.getElementById("anime-list");
+let animeData = []; // Simpan data JSON
+
+// Ambil data dari anime.json
+fetch('anime.json')
+  .then(res => res.json())
+  .then(data => {
+    animeData = data; // simpan di array
+    displayAnime(data); // tampilkan semua awalnya
+  })
+  .catch(err => console.error("Error:", err));
+
+// Fungsi tampilkan anime ke container
+function displayAnime(list) {
+    container.innerHTML = ''; // bersihkan dulu
+    list.forEach(a => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+            <img src="${a.image}" alt="${a.title}">
+            <h3>${a.title}</h3>
+        `;
+        card.onclick = () => {
+            window.location.href = `detail.html?id=${a.id}`;
+        };
+        container.appendChild(card);
+    });
+}
+</script>
+
+
+</body>
+</html>

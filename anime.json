@@ -1,0 +1,58 @@
+[
+  {
+    "id": "onepiece",
+    "title": "One Piece",
+    "image": "img/onepiece.jpg",
+    "description": "Monkey D. Luffy, seorang pemuda dengan kemampuan karet karena memakan Buah Iblis, berlayar bersama kru Topi Jerami untuk menemukan harta legendaris One Piece. Dalam perjalanannya, ia menghadapi bajak laut tangguh, pemerintah dunia yang kuat, serta rahasia besar dari dunia Grand Line.",
+    "episodes": [
+      { "num": 1, "video": "https://www.youtube.com/embed/VIDEO_ID_OP1" },
+      { "num": 2, "video": "https://www.youtube.com/embed/VIDEO_ID_OP2" }
+    ]
+  },
+  {
+    "id": "naruto",
+    "title": "Naruto",
+    "image": "img/naruto.jpg",
+    "description": "Naruto Uzumaki adalah ninja remaja yang bercita-cita menjadi Hokage, pemimpin dan pelindung desa Konoha. Dengan tekad dan semangat pantang menyerah, ia harus menguasai berbagai jurus ninja, menghadapi musuh kuat, dan mengungkap rahasia masa lalunya yang penuh misteri.",
+    "episodes": [
+      { "num": 1, "video": "https://www.youtube.com/embed/VIDEO_ID_NARUTO1" }
+    ]
+  },
+  {
+    "id": "aot",
+    "title": "Attack on Titan",
+    "image": "img/aot.jpg",
+    "description": "Di dunia yang dikepung oleh tembok raksasa, umat manusia terancam oleh Titan pemakan manusia. Eren Yeager dan teman-temannya berjuang untuk bertahan hidup, mengungkap misteri asal-usul Titan, dan menantang batas keberanian serta pengorbanan demi kebebasan umat manusia.",
+    "episodes": [
+      { "num": 1, "video": "https://www.youtube.com/embed/uEVbjuTkBgs?list=PLPanbgyToztZ-o4DoplaE4gSne2ZvBIBT" }
+    ]
+  },
+  {
+    "id": "demonslayer",
+    "title": "Demon Slayer: Movie",
+    "image": "img/demonslayer.jpg",
+    "description": "Tanjiro Kamado, seorang anak baik hati, menjadi pemburu iblis setelah keluarganya dibantai oleh makhluk jahat dan adiknya berubah menjadi iblis. Dengan tekad untuk menyembuhkan adiknya dan menegakkan keadilan, ia menghadapi berbagai iblis kuat sambil mengasah kemampuan pedangnya dan kekuatan pernapasan uniknya.",
+    "episodes": [
+      { "num": 1, "video": "https://www.youtube.com/embed/Yc9_8bAZOhc" },
+      { "num": 2, "video": "https://www.youtube.com/embed/VIDEO_ID_DS2" }
+    ]
+  },
+  {
+    "id": "jujutsu",
+    "title": "Jujutsu Kaisen",
+    "image": "img/jujutsu.jpg",
+    "description": "Yuji Itadori, seorang remaja dengan kekuatan fisik luar biasa, terlibat dalam dunia supranatural penuh kutukan dan roh jahat. Ia bergabung dengan Sekolah Jujutsu untuk mempelajari teknik eksorsisme dan bertarung melawan kutukan kuat demi melindungi orang-orang yang dicintainya.",
+    "episodes": [
+      { "num": 1, "video": "https://www.youtube.com/embed/XaWeaWbdDiE" }
+    ]
+  },
+  {
+    "id": "danganronpa",
+    "title": "Danganronpa: The Animation",
+    "image": "img/danganronpa.jpg",
+    "description": "Sekelompok siswa terpilih terjebak di sekolah elit Hope's Peak. Mereka dipaksa mengikuti permainan mematikan oleh beruang misterius bernama Monokuma, di mana satu-satunya jalan keluar adalah membunuh teman mereka tanpa ketahuan.",
+    "episodes": [
+      { "num": 1, "video": "https://www.youtube.com/embed/CpwgcqoAl6khttps://www.youtube.com/embed/5vEJQ7KAeCc" }
+    ]
+  }
+]
