@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Download kali.txt</title>
+</head>
+<body>
+
+  <button onclick="downloadFile()">Download kali.txt</button>
+
+  <script>
+    function downloadFile() {
+      // Isi file
+      const isi = "Halo dunia!\nIni file kali.txt";
+
+      // Membuat blob
+      const blob = new Blob([isi], { type: "text/plain" });
+
+      // Membuat link download
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "kali.txt";
+
+      // Klik otomatis
+      a.click();
+
+      // Bersih-bersih. Bahkan browser juga capek habis kerja rodi.
+      URL.revokeObjectURL(a.href);
+    }
+  </script>
+
+</body>
+</html>
